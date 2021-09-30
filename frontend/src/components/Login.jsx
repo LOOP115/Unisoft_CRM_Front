@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert"
 import Button from "react-bootstrap/Button";
+import './CSS/Login.css'
 import { Redirect } from "react-router-dom";
 import { EndPointContext } from './App'
 
@@ -82,6 +83,7 @@ function Login(props) {
               <Button block size="lg" type="submit" disabled={!validForm()} onClick={handleClick}>
                 Login
               </Button>
+              <p>Does not have an account? <a href="/Signup">Sign up</a> </p>
             </Form>
           </div>
         </>

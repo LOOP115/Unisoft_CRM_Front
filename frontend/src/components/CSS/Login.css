@@ -1,0 +1,13 @@
+.Login {
+    padding: 60px;
+
+}
+
+.Login Form {
+    margin:0;
+    max-width:360px
+}
+
+.Login Button{
+    margin-bottom: 10px;
+}
