@@ -24,3 +24,6 @@ venv/
 /frontend/yarn-debug.log*
 /frontend/yarn-error.log*
 test.py
+frontend/package-lock.json
+frontend/yarn.lock
+frontend/package-lock.json
