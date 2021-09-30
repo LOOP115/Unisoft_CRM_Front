@@ -1,15 +1,6 @@
-import React, { useState } from 'react';
-import {Dropdown} from "react-bootstrap";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-
+import React from "react";
 
 function Signup() {
-  const [date, setDate] = useState(new Date());
-
-  const onChange = date => {
-    setDate(date)
-  }
   return (
     <div className="container">
       <div className="heading">
@@ -32,22 +23,6 @@ function Signup() {
           <br />
           <label>Re-input Password: </label>
           <input name="password" type="text"/>
-          <br />
-          <br />
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              Date of Birth
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <div>
-                <Calendar
-                    onChange={onChange}
-                    date={date}
-                />
-                {date.toString()}
-              </div>
-            </Dropdown.Menu>
-          </Dropdown>
           <br />
           <br />
         </form>
