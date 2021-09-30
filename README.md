@@ -1,1 +1,1 @@
-# IT_Project_Frontend
+# React Frontend for Unisoft CRM system
