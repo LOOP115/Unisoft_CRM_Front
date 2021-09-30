@@ -161,8 +161,10 @@ function Signup() {
                       date={date}
                   />
                 </div>
+                {formatDate}
               </Dropdown.Menu>
             </Dropdown>
+            Your date of birth: {formatDate}
 
             <br />
 
