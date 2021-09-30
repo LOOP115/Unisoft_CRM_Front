@@ -3,6 +3,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert"
 import {EndPointContext} from './App.jsx'
+import {Dropdown} from "react-bootstrap";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import './CSS/Signup.css'
 
 function Signup() {
@@ -14,6 +17,11 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
+  const [date, setDate] = useState(new Date());
+
+  const onChange = date => {
+    setDate(date)
+  }
 
   const [regFailed, setRegFailed] = useState(false)
   const [regSuccess, setRegSuccess] = useState(false)
@@ -36,7 +44,8 @@ function Signup() {
         lastName: lname,
         email: email,
         password: password,
-        username: username
+        username: username,
+        DoB:date
       })
     }).then(res => {
       if (res.status !== 200) {
@@ -125,7 +134,6 @@ function Signup() {
                 />
               </Form.Group>
 
-
             </Form.Group>
 
             <Form.Group size="sm">
@@ -137,6 +145,24 @@ function Signup() {
                   onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
+
+            <br />
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Date of Birth
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <div>
+                  <Calendar
+                      onChange={onChange}
+                      date={date}
+                  />
+                  {date.toString()}
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
+            <br />
+
             <Button variant="success" block size="lg" onClick={handleClick} className="btn" disabled={!validForm()}>
               Register
             </Button>
