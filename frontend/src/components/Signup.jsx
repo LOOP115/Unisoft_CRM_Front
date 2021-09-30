@@ -5,8 +5,10 @@ import Alert from "react-bootstrap/Alert"
 import {EndPointContext} from './App.jsx'
 import {Dropdown} from "react-bootstrap";
 import Calendar from 'react-calendar';
+import dayjs from 'dayjs';
 import 'react-calendar/dist/Calendar.css';
 import './CSS/Signup.css'
+import {formatDay} from "react-calendar/dist/umd/shared/dateFormatter";
 
 function Signup() {
   const URLEndContext = useContext(EndPointContext)
@@ -18,6 +20,7 @@ function Signup() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [date, setDate] = useState(new Date());
+  const formatDate = dayjs(date).format('YYYY-MM-DD');
 
   const onChange = date => {
     setDate(date)
@@ -45,7 +48,7 @@ function Signup() {
         email: email,
         password: password,
         username: username,
-        DoB:date
+        birth:formatDate
       })
     }).then(res => {
       if (res.status !== 200) {
@@ -157,10 +160,10 @@ function Signup() {
                       onChange={onChange}
                       date={date}
                   />
-                  {date.toString()}
                 </div>
               </Dropdown.Menu>
             </Dropdown>
+
             <br />
 
             <Button variant="success" block size="lg" onClick={handleClick} className="btn" disabled={!validForm()}>
