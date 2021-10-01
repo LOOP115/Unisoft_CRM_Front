@@ -43,8 +43,8 @@ function Signup() {
         'Access-Control-Allow-Credentials': 'true'
       },
       body: JSON.stringify({
-        firstName: fname,
-        lastName: lname,
+        firstname: fname,
+        lastname: lname,
         email: email,
         password: password,
         username: username,
