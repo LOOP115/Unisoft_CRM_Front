@@ -9,6 +9,7 @@ import dayjs from 'dayjs';
 import 'react-calendar/dist/Calendar.css';
 import './CSS/Signup.css'
 import {formatDay} from "react-calendar/dist/umd/shared/dateFormatter";
+import {Link} from "react-router-dom";
 
 function Signup() {
   const URLEndContext = useContext(EndPointContext)
@@ -77,9 +78,16 @@ function Signup() {
   }
 
   if (regSuccess) {
-    return <Alert variant="success">
-      `Welcome! ${username}`
-    </Alert>
+    return (
+        <div>
+          <h1>Welcome, {username}!</h1>
+          <br/>
+          <h3>Click the following button to login with your credentials</h3>
+          <br/>
+          <Link to={"login"}><Button>login</Button></Link>
+        </div>
+
+    )
   }
 
   return (

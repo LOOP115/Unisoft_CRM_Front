@@ -3,6 +3,7 @@ import {Button} from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import Cookies from 'js-cookie';
 import { EndPointContext } from './App'
+import TheNavbar from "./TheNavbar";
 
 
 
@@ -30,6 +31,7 @@ function Success(props){
 
     return(
         <div>
+            <TheNavbar/>
             <h2>
                 {localStorage.getItem("username")}
             </h2>

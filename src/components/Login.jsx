@@ -30,7 +30,7 @@ function Login(props) {
     })
         .then(res => {
           console.log(JSON.stringify({email: email, password: password}))
-          if (res.status !== 200) throw new Error("Connection error")
+          if (res.status !== 200 && res.status!== 300) throw new Error("Connection error")
           return res.json()
         })
         .then(data => {
