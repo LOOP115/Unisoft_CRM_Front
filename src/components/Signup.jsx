@@ -86,12 +86,10 @@ function Signup() {
           <br/>
           <Link to={"login"}><Button>login</Button></Link>
         </div>
-
     )
   }
 
-  return (
-      <>
+  return (<>
         <h2> Signup </h2>
         <div className="Signup">
           <Form>
