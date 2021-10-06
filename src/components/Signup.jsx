@@ -30,6 +30,15 @@ function Signup() {
   const [regFailed, setRegFailed] = useState(false)
   const [regSuccess, setRegSuccess] = useState(false)
 
+  const signupStyle = {
+    backgroundColor: "#f8f0df",
+    fontFamily: "Architects Daughter",
+    textAlign: "center",
+  }
+  const mergeFirm = {
+    mergeLeft: "100px"
+  }
+
   function validForm(){
     return (email.length > 0) && (password.length > 0) && (username.length > 0)
   }
@@ -89,10 +98,11 @@ function Signup() {
     )
   }
 
-  return (<>
+  return (
+      <div style = {signupStyle} className = "login_signup_Firm">
         <h2> Signup </h2>
         <div className="Signup">
-          <Form>
+          <Form >
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -172,7 +182,7 @@ function Signup() {
             </Dropdown>
             Your date of birth: {formatDate}
 
-            <br />
+            <br /><br /><br />
 
             <Button variant="success" block size="lg" onClick={handleClick} className="btn" disabled={!validForm()}>
               Register
@@ -180,7 +190,7 @@ function Signup() {
           </Form>
           <p>Already have account? <a href="/login">Log in</a> </p>
         </div>
-      </>
+      </div>
   );
 
 }

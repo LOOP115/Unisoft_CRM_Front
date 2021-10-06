@@ -15,6 +15,11 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(null);
   const [loginFailed, setLoginFailed] = useState(false)
+  const loginStyle = {
+    backgroundColor: "#f8f0df",
+    fontFamily: "Architects Daughter",
+    textAlign: "center",
+  }
 
   function handleClick(e) {
     e.preventDefault()
@@ -90,10 +95,11 @@ function Login(props) {
     )
   }
   return (
-      <div className="Login">
+      <div className="Login" style={loginStyle} className = "login_signup_Firm">
         <Form >
+          <h1>Login</h1> <br /><br /><br /><br />
           <Form.Group size="lg" controlId="email">
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Email</Form.Label><br />
             <Form.Control
                 autoFocus
                 type="text"
@@ -102,17 +108,21 @@ function Login(props) {
             />
           </Form.Group>
           <Form.Group size="lg" controlId="password">
+          <br /><br />
             <Form.Label>Password</Form.Label>
+            <br />
             <Form.Control
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
+          <br /><br />
           <Button block size="lg" type="submit" disabled={!validForm()} onClick={handleClick}>
             Login
           </Button>
-          <p>Does not have an account? <a href="/Signup">Sign up</a> </p>
+          <br /><br />
+          <p>Do not have an account? <a href="/Signup">Sign up</a> </p>
         </Form>
       </div>
   )
