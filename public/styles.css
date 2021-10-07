@@ -85,9 +85,9 @@ button:active {
 }
 
 .home-content-img{
-  width: 290px;
+  width: 299px;
   height: 250px;
-  margin-left: 180px;
+  margin-left: 66.5%;
   margin-bottom: 20%;
   min-height: 100px;
   min-width: 50px;
@@ -100,7 +100,7 @@ button:active {
 .home-content-detail-text{
     text-align: center;
     min-width: 290px;
-    margin-left: 180px;
+    margin-left: 40%;
     margin-top: 50px;
     height: 200px;
     color: #FEFBF3;
