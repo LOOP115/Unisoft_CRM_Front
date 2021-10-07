@@ -9,6 +9,7 @@ import Success from "./Success";
 import Logout from "./Logout";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Dashboard from "./Dashboard";
 //import AddCard from "./AddCard";
 
 
@@ -41,6 +42,10 @@ function App() {
 
                         <Route exact path={"/logout"}>
                             <Logout/>
+                        </Route>
+
+                        <Route exact path={"/dashboard"}>
+                            <Dashboard/>
                         </Route>
 
                     </Switch>
