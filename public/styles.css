@@ -74,18 +74,23 @@ button:active {
 
 .home-content{
     background-color: #F7F6F2;
+    min-height: auto;
+    min-width: auto;
 }
 
 .home-content-detail{
-      min-height: 500px;
-      height: 600px;
-      margin-left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
 }
 
 .home-content-img{
-    width: 300px;
-    height: 250px;
-    margin-left: 150px;
+  width: 290px;
+  height: 250px;
+  margin-left: 180px;
+  margin-bottom: 20%;
+  min-height: 100px;
+  min-width: 50px;
 }
 
 .home-style{
@@ -94,8 +99,9 @@ button:active {
 
 .home-content-detail-text{
     text-align: center;
-    margin-left: 150px;
-    margin-top: 50px;;
+    min-width: 290px;
+    margin-left: 180px;
+    margin-top: 50px;
     height: 200px;
     color: #FEFBF3;
     background-color: black;
