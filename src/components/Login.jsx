@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import './CSS/Login.css'
 import { Redirect } from "react-router-dom";
 import { EndPointContext } from './App'
+import Footer from "./Footer";
 
 function Login(props) {
 
@@ -124,6 +125,7 @@ function Login(props) {
           <br /><br />
           <p>Do not have an account? <a href="/Signup">Sign up</a> </p>
         </Form>
+        <Footer />
       </div>
   )
 

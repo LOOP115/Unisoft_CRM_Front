@@ -10,6 +10,7 @@ import 'react-calendar/dist/Calendar.css';
 import './CSS/Signup.css'
 import {formatDay} from "react-calendar/dist/umd/shared/dateFormatter";
 import {Link} from "react-router-dom";
+import Footer from "./Footer";
 
 function Signup() {
   const URLEndContext = useContext(EndPointContext)
@@ -190,6 +191,7 @@ function Signup() {
           </Form>
           <p>Already have account? <a href="/login">Log in</a> </p>
         </div>
+         <Footer />           
       </div>
   );
 
