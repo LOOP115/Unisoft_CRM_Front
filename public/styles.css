@@ -88,6 +88,9 @@ button:active {
     margin-left: 150px;
 }
 
+.home-style{
+  min-height: auto;
+}
 
 .home-content-detail-text{
     text-align: center;
@@ -107,9 +110,9 @@ button:active {
     margin-left: 30%;
     margin-top: 5%;
     height: auto;
-    min-height: 500px;
-    max-width: 700px;
-    min-width: 700px;
+    min-height: 400px;
+    max-width: 600px;
+    min-width: 250px;
     background: #f1f5f8;
     background-size: 100px 100px;
     border-radius: 20px;

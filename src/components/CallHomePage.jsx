@@ -18,7 +18,7 @@ function CallHomePage(){
         backgroundColor:"#F7F6F2",
     }
     return (
-    <div style = {wholeColor}>
+    <div style = {wholeColor} className = "home-style">
         <div style = {headerStyle}>
         <Header />
         < br/>
