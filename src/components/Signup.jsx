@@ -184,7 +184,7 @@ function Signup() {
 
             <br /><br /><br />
 
-            <Button variant="success" block size="lg" onClick={handleClick} className="btn" disabled={!validForm()}>
+            <Button variant="dark" block size="lg" onClick={handleClick} className="btn3" disabled={!validForm()}>
               Register
             </Button>
           </Form>
