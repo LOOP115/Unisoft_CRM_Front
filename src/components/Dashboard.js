@@ -4,6 +4,7 @@ import TheNavbar from "./TheNavbar";
 import ActivityItem from "./ActivityItem";
 import Button from "react-bootstrap/Button";
 import {Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 function Dashboard(){
     const URLEndContext = useContext(EndPointContext)
@@ -89,7 +90,7 @@ function Dashboard(){
             <br/>
             <h1>Events</h1>
             <br/>
-            <Button>+ Create New Activity</Button>
+            <Link to={"/dashboard/new"}><Button>+ Create New Activity</Button></Link>
             <br/>
             <br/>
             {printList()}

@@ -1,7 +1,6 @@
 import React, {useContext, useState} from "react";
 import {Button} from "react-bootstrap";
 import { Redirect } from "react-router-dom";
-import Cookies from 'js-cookie';
 import { EndPointContext } from './App'
 import TheNavbar from "./TheNavbar";
 
