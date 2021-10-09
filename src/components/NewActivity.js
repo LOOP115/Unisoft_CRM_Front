@@ -49,6 +49,7 @@ function NewActivity() {
             desc:desc,
             location:location,
             time:formatFullTime,
+
             status:"something" //TODO change this
         }))
 
@@ -63,7 +64,7 @@ function NewActivity() {
                 title:title,
                 desc:desc,
                 location:location,
-                time:formatDate,
+                time:formatFullTime,
                 status:"something" //TODO change this
             })
         }).then(res => {

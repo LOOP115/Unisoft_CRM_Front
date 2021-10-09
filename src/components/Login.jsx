@@ -45,7 +45,7 @@ function Login(props) {
           localStorage.setItem("userID", data["userid"])
           localStorage.setItem("email", data["email"])
           localStorage.setItem("logIn", "true")
-          setRedirect("/success")
+          setRedirect("/dashboard")
 
         })
         .catch(err => {console.error(err); setLoginFailed(true)})
@@ -59,7 +59,7 @@ function Login(props) {
   }
 
   if (redirect) {
-    return (<Redirect to={"/success"} />);
+    return (<Redirect to={"/dashboard"} />);
   }
   if (loginFailed){
     return (<>

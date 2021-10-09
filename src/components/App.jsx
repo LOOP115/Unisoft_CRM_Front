@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Dashboard from "./Dashboard";
 import NewActivity from "./NewActivity";
+import Contacts from "./Contacts";
+import NewContact from "./NewContact";
 //import AddCard from "./AddCard";
 
 
@@ -51,6 +53,14 @@ function App() {
 
                         <Route exact path={"/dashboard/new"}>
                             <NewActivity/>
+                        </Route>
+
+                        <Route exact path={"/contacts"}>
+                            <Contacts/>
+                        </Route>
+
+                        <Route exact path={"/contacts/new"}>
+                            <NewContact/>
                         </Route>
 
                     </Switch>
