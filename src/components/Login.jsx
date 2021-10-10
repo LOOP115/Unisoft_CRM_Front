@@ -64,7 +64,7 @@ function Login(props) {
   if (loginFailed){
     return (<>
 
-          <div className="Login">
+          <div className = "login_signup_Firm">
             <Alert variant="danger">
               Incorrect Email/Password!
             </Alert>
@@ -96,7 +96,9 @@ function Login(props) {
     )
   }
   return (
-      <div className="Login" style={loginStyle} className = "login_signup_Firm">
+    <div className = "background">
+    <br /><br /><br /><br /><br /><br /><br /><br />
+      <div style={loginStyle} className = "login_signup_Firm">
         <Form >
           <h1>Login</h1> <br /><br /><br /><br />
           <Form.Group size="lg" controlId="email">
@@ -125,7 +127,9 @@ function Login(props) {
           <br /><br />
           <p>Do not have an account? <a href="/Signup">Sign up</a> </p>
         </Form>
-        <Footer />
+      </div>
+      <br /><br /><br /><br /><br /><br /><br />
+      <Footer />
       </div>
   )
 

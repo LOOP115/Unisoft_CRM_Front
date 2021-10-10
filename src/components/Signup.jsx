@@ -100,6 +100,7 @@ function Signup() {
   }
 
   return (
+    <div className = "background"><br /><br />
       <div style = {signupStyle} className = "login_signup_Firm">
         <h2> Signup </h2>
         <div className="Signup">
@@ -190,8 +191,10 @@ function Signup() {
             </Button>
           </Form>
           <p>Already have account? <a href="/login">Log in</a> </p>
-        </div>
-         <Footer />           
+        </div>         
+      </div>
+      <br /><br /><br />
+      <Footer />  
       </div>
   );
 

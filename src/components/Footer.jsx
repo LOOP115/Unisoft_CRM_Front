@@ -8,11 +8,13 @@ function Footer(){
         color : "lightGray",
         textAlign : "center",
         height: "50px",
-        margin: "0px 0px 0px 0px",
+        marginTop: "1%",
+        position: "relative",
+        bottom: "0"
     };
 
     return (
-        <p style = {footerStyle}><p><br />Copyright © {currentYear} by: Team Unisoft</p></p>
+        <p style = {footerStyle}><p>Copyright © {currentYear} by: Team Unisoft</p></p>
     );       
 }
 

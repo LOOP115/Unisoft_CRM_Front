@@ -74,7 +74,7 @@ button:active {
 
 .home-content{
     background-color: #F7F6F2;
-    min-height: auto;
+    min-height: 650px;
     min-width: auto;
 }
 
@@ -94,7 +94,7 @@ button:active {
 }
 
 .home-style{
-  min-height: auto;
+  min-height: 100%;
 }
 
 .home-content-detail-text{
@@ -113,19 +113,16 @@ button:active {
 
 /* Login style */
 .login_signup_Firm {
-    margin-left: 30%;
-    margin-top: 5%;
+    margin-left: 35%;
     height: auto;
     min-height: 400px;
     max-width: 600px;
     min-width: 250px;
-    background: #f1f5f8;
     background-size: 100px 100px;
     border-radius: 20px;
     box-shadow: 4px 3px 7px 2px #00000040;
     padding: 50px;
     box-sizing: border-box;
-    background-color: #f8f0df
   }
   .heading {
     display: flex;
@@ -167,3 +164,7 @@ button:active {
     transform: translateY(1px);
   }
   
+.background {
+  background-color: #DBD0C0;
+  min-height: 1000px;
+}
