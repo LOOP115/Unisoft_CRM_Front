@@ -63,8 +63,8 @@ function Login(props) {
   }
   if (loginFailed){
     return (<>
-
-          <div className = "login_signup_Firm">
+        <div className = "background">
+          <div style={loginStyle} className = "login_signup_Firm">
             <Alert variant="danger">
               Incorrect Email/Password!
             </Alert>
@@ -91,6 +91,7 @@ function Login(props) {
               </Button>
               <p>Does not have an account? <a href="/Signup">Sign up</a> </p>
             </Form>
+          </div>
           </div>
         </>
     )
