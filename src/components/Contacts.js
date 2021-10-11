@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import {Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import ContactItem from "./ContactItem";
+import Footer from "./Footer";
 
 function Contacts(){
     const URLEndContext = useContext(EndPointContext)
@@ -82,8 +83,10 @@ function Contacts(){
     }
 
     return(
-        <div>
-            <TheNavbar/>
+        <div className = "dashboard-background-style">
+        <TheNavbar/>
+        <div style = {{  marginLeft: "2%"}}>
+            
             <br/>
             <h1>Contacts</h1>
             <br/>
@@ -91,6 +94,8 @@ function Contacts(){
             <br/>
             <br/>
             {printList()}
+        </div>
+        <div style = {{marginTop:"22%"}}><Footer/></div>
         </div>
     )
 }

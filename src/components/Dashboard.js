@@ -5,6 +5,7 @@ import ActivityItem from "./ActivityItem";
 import Button from "react-bootstrap/Button";
 import {Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import Footer from "./Footer";
 
 function Dashboard(){
     const URLEndContext = useContext(EndPointContext)
@@ -85,8 +86,10 @@ function Dashboard(){
     }
 
     return(
-        <div>
+        <div >
             <TheNavbar/>
+            <div className = "dashboard-background-style">
+            <div style = {{  marginLeft: "2%"}}>
             <br/>
             <h1>Events</h1>
             <br/>
@@ -94,6 +97,10 @@ function Dashboard(){
             <br/>
             <br/>
             {printList()}
+            </div>
+            <div style = {{marginTop:"21%"}}><Footer/></div>
+        </div>
+
         </div>
     )
 }

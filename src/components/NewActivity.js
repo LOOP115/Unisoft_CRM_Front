@@ -38,6 +38,11 @@ function NewActivity() {
     const [creatingFailed, setCreatingFailed] = useState(false)
     const [creatingSuccess, setCreatingSuccess] = useState(false)
 
+    const activityStyle = {
+        backgroundColor: "#f8f0df",
+        fontFamily: "Architects Daughter",
+        textAlign: "center",
+      }
 
     function validForm(){
         return (title.length > 0)
@@ -104,95 +109,100 @@ function NewActivity() {
     return (
         <div>
         <TheNavbar/>
-        <div className = "login_signup_Firm">
+        
+        <div className = "background">
+            <div className = "login_signup_Firm" style = {activityStyle}>
 
-            {failWarning}
-            <div className="Signup">
+                {failWarning}
                 <Link to={"/dashboard"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
-                <br/>
-                <h2> New Activity </h2>
-                <Form >
-                    <Form.Group>
-                        <Form.Label>Title</Form.Label>
-                        <Form.Control
-                            placeholder="Enter the Title of the event (eg. have coffee)"
-                            autoFocus
-                            type="text"
-                            value={title}
-                            onChange={(e) => {
-                                setTitle(e.target.value);
-                            }}
-                        />
-                    </Form.Group>
+                <div className="Signup" >
+                    <h1> New Activity </h1>
+                    <Form >
+                        <Form.Group>
+                            <Form.Label>Title</Form.Label>
+                            <Form.Control
+                                placeholder="Enter the Title of the event (eg. have coffee)"
+                                autoFocus
+                                type="text"
+                                value={title}
+                                onChange={(e) => {
+                                    setTitle(e.target.value);
+                                }}
+                            />
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>
-                            Address
-                        </Form.Label>
-                        <Form.Control
-                            placeholder="Where it's gonna take place"
-                            type="text"
-                            value={location}
-                            onChange={(e) => {
-                                setLocation(e.target.value);
-                            }}
-                        />
+                        <Form.Group>
+                            <br/>
+                            <Form.Label>
+                                Address
+                            </Form.Label>
+                            <Form.Control
+                                placeholder="Where it's gonna take place"
+                                type="text"
+                                value={location}
+                                onChange={(e) => {
+                                    setLocation(e.target.value);
+                                }}
+                            />
 
-                    </Form.Group>
+                        </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            placeholder="Anything goes"
-                            rows={3}
-                            value={desc}
-                            onChange={(e) => setDesc(e.target.value)}
-                        />
-                    </Form.Group>
+                        <Form.Group>
+                            <br/>
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Anything goes"
+                                rows={3}
+                                value={desc}
+                                onChange={(e) => setDesc(e.target.value)}
+                            />
+                        </Form.Group>
 
-                    <br />
-                    <Dropdown>
+                        <br /><br/>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                Choose Date
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <div>
+                                    <Calendar
+                                        onChange={onChange}
+                                        date={date}
+                                    />
+                                </div>
+                                {formatDate}
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        <br/>
+                        <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Choose Date
+                            Pick a Time
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <div>
-                                <Calendar
-                                    onChange={onChange}
-                                    date={date}
-                                />
-                            </div>
-                            {formatDate}
+                        <TimeKeeper
+                            onChange={onChangeDateTime}
+                            value={value}
+                        />
                         </Dropdown.Menu>
-                    </Dropdown>
-
-                    <br/>
-                    <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        Pick a Time
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    <TimeKeeper
-                        onChange={onChangeDateTime}
-                        value={value}
-                    />
-                    </Dropdown.Menu>
-                    </Dropdown>
-                    <br/>
-                    Current Chosen Time: {formatFullTime}
-                    <br />
-                    <br/>
+                        </Dropdown>
+                        <br/>
+                        Current Chosen Time: {formatFullTime}
+                        <br />
+                        <br/><br/>
 
 
-                    <Button variant="dark" block size="lg" onClick={handleClick} className="btn3" disabled={!validForm()}>
-                        Submit
-                    </Button>
-                </Form>
+                        <Button variant="dark" block size="lg" onClick={handleClick} className="btn3" disabled={!validForm()}>
+                            Submit
+                        </Button>
+                    </Form>
+                </div>
             </div>
+            
             <Footer />
         </div>
-        </div>
+    </div>
     );
 
 }

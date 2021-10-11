@@ -89,7 +89,7 @@ function Signup() {
 
   if (regSuccess) {
     return (
-        <div>
+        <div className = "background" style = {signupStyle}>
           <h1>Welcome, {username}!</h1>
           <br/>
           <h3>Click the following button to login with your credentials</h3>

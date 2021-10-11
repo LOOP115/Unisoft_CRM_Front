@@ -22,6 +22,12 @@ function NewContact() {
 
     const [creatingFailed, setCreatingFailed] = useState(false)
     const [creatingSuccess, setCreatingSuccess] = useState(false)
+    const contactStyle = {
+        backgroundColor: "#f8f0df",
+        fontFamily: "Architects Daughter",
+        textAlign: "center",
+        marginTop: "3%"
+      }
 
 
     function validForm(){
@@ -86,16 +92,16 @@ function NewContact() {
     }
 
     return (
-        <div>
+        <div className = "background">
             <TheNavbar/>
-            <div className = "login_signup_Firm">
-
+            <div className = "login_signup_Firm" style = {contactStyle}>
+            <Link to={"/contacts"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
                 {failWarning}
                 <div className="Signup">
-                    <Link to={"/contacts"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
-                    <br/>
+                    
                     <h2> New Contacts </h2>
                     <Form >
+                    <br/>
                         <Form.Group>
                             <Form.Label>First Name</Form.Label>
                             <Form.Control
@@ -107,7 +113,7 @@ function NewContact() {
                                 }}
                             />
                         </Form.Group>
-
+                        <br/>
                         <Form.Group>
                             <Form.Label>
                                 Last Name
@@ -121,7 +127,7 @@ function NewContact() {
                             />
 
                         </Form.Group>
-
+                        <br/>
                         <Form.Group>
                             <Form.Label>
                                 Company
@@ -135,7 +141,7 @@ function NewContact() {
                             />
 
                         </Form.Group>
-
+                        <br/>
                         <Form.Group>
                             <Form.Label>
                                 Email
@@ -149,7 +155,7 @@ function NewContact() {
                             />
 
                         </Form.Group>
-
+                        <br/>
                         <Form.Group>
                             <Form.Label>
                                 Phone
@@ -164,18 +170,15 @@ function NewContact() {
 
                         </Form.Group>
 
-                        <br />
-                        <br />
                         <br/>
-
-
                         <Button variant="dark" block size="lg" onClick={handleClick} className="btn3" disabled={!validForm()}>
                             Submit
                         </Button>
                     </Form>
                 </div>
-                <Footer />
+                
             </div>
+            <div style = {{marginTop:"1%"}}><Footer/></div>
         </div>
     );
 

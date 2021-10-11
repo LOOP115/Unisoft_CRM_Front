@@ -115,13 +115,13 @@ button:active {
 .login_signup_Firm {
     margin-left: 35%;
     height: auto;
-    min-height: 400px;
+    min-height: 350px;
     max-width: 600px;
     min-width: 250px;
     background-size: 100px 100px;
     border-radius: 20px;
     box-shadow: 4px 3px 7px 2px #00000040;
-    padding: 50px;
+    padding: 40px;
     box-sizing: border-box;
   }
   .heading {
@@ -167,4 +167,10 @@ button:active {
 .background {
   background-color: #DBD0C0;
   min-height: 1000px;
+}
+
+/*Dashboard*/
+.dashboard-background-style{
+  background-color: #F7F6F2;
+  min-height: 900px;
 }
