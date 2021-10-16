@@ -130,7 +130,7 @@ function Login(props) {
           <p>Do not have an account? <a href="/Signup">Sign up</a> </p>
         </Form>
       </div>
-      <br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br />
       <Footer />
       </div>
   )
