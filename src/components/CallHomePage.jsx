@@ -26,7 +26,9 @@ function CallHomePage(){
         {"- or -"}
         {secondtButton() }
         </div>
+        <div>
         <Info />
+        </div>
         <div style = {{marginTop:"2%"}}>
         <Footer />
         </div>

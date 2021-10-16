@@ -7,9 +7,9 @@ function Info(){
     }
 
     return(
-        <div className="home-content">
+        <div className="home-content" >
         <h2 style = {textStyle}>We provide</h2>
-        <table className="home-content-detail">
+        <table className="home-content-detail" class = "center">
             <td style = {textStyle}>
                 <div className = "home-content-detail-text">
                     <tr><h3>Store Your Contacts</h3></tr>
