@@ -27,7 +27,9 @@ function CallHomePage(){
         {secondtButton() }
         </div>
         <Info />
+        <div style = {{marginTop:"2%"}}>
         <Footer />
+        </div>
     </div>
     );
 }
