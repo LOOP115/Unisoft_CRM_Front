@@ -7,8 +7,8 @@ function CallHomePage(){
     const headerStyle = {
         margin: "auto",
         width : "auto",
-        backgroundColor: "#F7F6F2",
-        height: "300px",
+        backgroundColor: "#E6E6E6",
+        minHeight: "250px",
         bottom : "0px",    
         textAlign: "center", 
     };
@@ -26,10 +26,10 @@ function CallHomePage(){
         {"- or -"}
         {secondtButton() }
         </div>
-        <div>
+        <div style = {{marginTop:"1%"}}>
         <Info />
         </div>
-        <div style = {{marginTop:"2%"}}>
+        <div style = {{marginTop:"3%"}}>
         <Footer />
         </div>
     </div>

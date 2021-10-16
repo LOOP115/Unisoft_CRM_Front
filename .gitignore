@@ -22,3 +22,7 @@
 /package-lock.json
 /yarn.lock
 /package-lock.json
+build/.DS_Store
+build/static/.DS_Store
+src/.DS_Store
+src/components/.DS_Store
