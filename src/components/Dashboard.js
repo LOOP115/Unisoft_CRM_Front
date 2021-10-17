@@ -86,21 +86,20 @@ function Dashboard(){
     }
 
     return(
-        <div >
-            <TheNavbar/>
+        <div style = {{height:"100vh"}}>
+            <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
             <div className = "dashboard-background-style">
-            <div style = {{  marginLeft: "2%"}}>
-            <br/>
-            <h1>Events</h1>
-            <br/>
-            <Link to={"/dashboard/new"}><Button>+ Create New Activity</Button></Link>
-            <br/>
-            <br/>
-            {printList()}
+                    <div style = {{marginLeft: "2%"}}>
+                        <br/>
+                        <h1>Events</h1>
+                        <br/>
+                        <Link to={"/dashboard/new"}><Button>+ Create New Activity</Button></Link>
+                        <br/>
+                        <br/>
+                        {printList()}
+                    </div>
+                <div style = {{marginTop:"21%"}}><Footer/></div>
             </div>
-            <div style = {{marginTop:"21%"}}><Footer/></div>
-        </div>
-
         </div>
     )
 }

@@ -23,10 +23,13 @@ function NewContact() {
     const [creatingFailed, setCreatingFailed] = useState(false)
     const [creatingSuccess, setCreatingSuccess] = useState(false)
     const contactStyle = {
-        backgroundColor: "#f8f0df",
+        backgroundColor: "#E6E6E6",
         fontFamily: "Architects Daughter",
         textAlign: "center",
-        marginTop: "3%"
+        height: "86vh",
+        minHeight: "auto",
+        maxHeight: "auto",
+        marginTop: "0"
       }
 
 

@@ -142,40 +142,39 @@ function Contacts(){
     }
 
     return(
-        <div className = "dashboard-background-style">
-        <TheNavbar/>
-        <div style = {{  marginLeft: "2%"}}>
-            
-            <br/>
-            <h1>Contacts</h1>
-            <br/>
-            <Link to={"/contacts/new"}><Button>+ Create New Contact</Button></Link>
-            <br/>
-            <br/>
-            <Form>
-                <Row className="align-items-center">
-                    <Col xs="auto">
-                        <Form.Label htmlFor="inlineFormInput" visuallyHidden>
-                            Name
-                        </Form.Label>
+        <div style = {{height:"100vh"}}>
+            <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
+                <div style = {{  marginLeft: "2%"}}>           
+                <br/>
+                <h1>Contacts</h1>
+                <br/>
+                <Link to={"/contacts/new"}><Button>+ Create New Contact</Button></Link>
+                <br/>
+                <br/>
+                <Form>
+                    <Row className="align-items-center">
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" visuallyHidden>
+                                Name
+                            </Form.Label>
 
-                        <Form.Control
-                            className="mb-2"
-                            id="Filtering"
-                            placeholder="Filter by Company"
-                            value={filterCompany}
-                            onChange={(e) => setFilterCompany(e.target.value)}
-                        />
-                    </Col>
-                    <Col xs="auto">
-                        <Button onClick={handleFilter}>
-                            Filter
-                        </Button>
-                    </Col>
-                </Row>
-            </Form>
-            <br/>
-            {printList()}
+                            <Form.Control
+                                className="mb-2"
+                                id="Filtering"
+                                placeholder="Filter by Company"
+                                value={filterCompany}
+                                onChange={(e) => setFilterCompany(e.target.value)}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Button onClick={handleFilter}>
+                                Filter
+                            </Button>
+                        </Col>
+                    </Row>
+                </Form>
+                <br/>
+                {printList()}
         </div>
         <div style = {{marginTop:"22%"}}><Footer/></div>
         </div>

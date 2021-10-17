@@ -39,9 +39,13 @@ function NewActivity() {
     const [creatingSuccess, setCreatingSuccess] = useState(false)
 
     const activityStyle = {
-        backgroundColor: "#f8f0df",
+        backgroundColor: "#E6E6E6",
         fontFamily: "Architects Daughter",
         textAlign: "center",
+        height: "86vh",
+        minHeight: "auto",
+        maxHeight: "auto",
+        marginTop: "0"
       }
 
     function validForm(){
@@ -108,10 +112,9 @@ function NewActivity() {
     }
 
     return (
-        <div>
-        <TheNavbar/>
-        
-        <div className = "background">
+        <div style = {{height:"100vh"}}>
+        <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
+        <div className = "dashboard-background-style">
             <div className = "login_signup_Firm" style = {activityStyle}>
 
                 {failWarning}

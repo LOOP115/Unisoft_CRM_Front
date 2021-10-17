@@ -94,11 +94,13 @@ function ContactItem(props){
         if (!deleteConfirm){
             return(<div>
                 <Button variant="warning" onClick = {handleEdit}>Edit</Button>
+                {'   '}
                 <Button variant="secondary" onClick={deleteSet}>Delete</Button>
             </div>)
         }else{
             return(<div>
                 <Button variant="danger" onClick={handleDelete}>Confirm Delete</Button>
+                {'   '}
                 <Button variant="warning" onClick = {handleEdit}>Edit</Button>
             </div>)
         }

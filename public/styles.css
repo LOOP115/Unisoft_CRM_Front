@@ -210,4 +210,5 @@ button:active {
 .dashboard-background-style{
   background-color: #F7F6F2;
   min-height: 900px;
+  height: 90vh;
 }
