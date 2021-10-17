@@ -116,7 +116,7 @@ function NewActivity() {
                 {failWarning}
                 <Link to={"/dashboard"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
                 <div className="Signup" >
-                    <h1> New Activity </h1>
+                    <h1> New Activity </h1><br/>
                     <Form >
                         <Form.Group>
                             <Form.Label>Title</Form.Label>

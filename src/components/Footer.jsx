@@ -8,9 +8,9 @@ function Footer(){
         marginBottom: "-0%",
         color : "lightGray",
         textAlign : "center",
-        height: "4rem",
+        height: "2rem",
         width: "100%",
-        position: "absolute",
+        position: "fixed",
         bottom: "0"
     };
 

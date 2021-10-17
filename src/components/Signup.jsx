@@ -103,7 +103,7 @@ function Signup() {
     <div className = "background"><br /><br />
       <div style = {signupStyle} className = "login_signup_Firm">
         <h2> Signup </h2>
-        <div className="Signup">
+        <div >
           <Form >
             <Form.Group>
               <Form.Label>Email</Form.Label>

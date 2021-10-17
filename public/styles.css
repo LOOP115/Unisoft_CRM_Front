@@ -145,8 +145,8 @@ td.center{
 .home-content-img-size{
   width: 24rem;
   height: 20rem;
-  min-height: auto;
-  min-width: auto;
+  min-height: 2.4rem;
+  min-width: 2rem;
 }
 
 .activity{

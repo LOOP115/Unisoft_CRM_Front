@@ -10,7 +10,7 @@ function Header(){
     
       return (
         
-        <header style = {headerStyle}><h1 style ={{fontSize:"5rem"}}>Client Relationship Management System</h1> </header>      
+        <header style = {headerStyle}><h1 style ={{fontSize:"300%"}}>Client Relationship Management System</h1> </header>      
         
       );
 }
