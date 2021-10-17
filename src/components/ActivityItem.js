@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Card from "react-bootstrap/Card"
 import {Accordion, Table} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -10,6 +10,36 @@ function ActivityItem(props){
 
     const URLEndContext = useContext(EndPointContext)
     const deleteURL = URLEndContext + "/activity/" + activity["actid"] + "/delete"
+    const getAcceptURL = URLEndContext + "/activity/" + activity["actid"] + "/participants"
+
+    const [participants, setParticipants] = useState([])
+
+    useEffect(()=>{
+        setup()
+    }, [])
+
+    function setup(){
+        if (activity["invite"].length !== 0){
+            fetch(getAcceptURL,{
+                method:"GET",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json",
+                    'Access-Control-Allow-Credentials': 'true'
+                }
+            }).then((res)=>{
+                if(res.status !== 200){
+                    console.log("error on getting participants")
+                    throw new Error("error on getting participants")
+
+                }
+                return res.json()
+            }).then(result=>{
+                setParticipants(result)
+                console.log(JSON.stringify(result))
+            }).catch(error => console.log('error', error))
+        }
+    }
 
     function handleDelete(){
         fetch(deleteURL,{
@@ -34,11 +64,14 @@ function ActivityItem(props){
         if(activity["invite"].length === 0){
             return <p>You are the only participant</p>
         }
+        if (participants.length === 0){
+            return <p>loading...</p>
+        }
         return(
             <div>
             {
 
-                activity["invite"].map(contact => {
+                participants.map(contact => {
                     return(
                         <InviteItem person={contact} actid={activity["actid"]}/>
                     )
