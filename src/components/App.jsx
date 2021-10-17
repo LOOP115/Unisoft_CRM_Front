@@ -14,6 +14,7 @@ import NewActivity from "./NewActivity";
 import Contacts from "./Contacts";
 import NewContact from "./NewContact";
 import EditContact from "./EditContact";
+import InviteContact from "./InviteContact";
 //import AddCard from "./AddCard";
 
 
@@ -67,6 +68,10 @@ function App() {
 
                         <Route exact path={"/contacts/edit"}>
                             <EditContact/>
+                        </Route>
+
+                        <Route exact path={"/activity/new/invite"}>
+                            <InviteContact/>
                         </Route>
 
                     </Switch>

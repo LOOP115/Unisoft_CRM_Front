@@ -82,6 +82,7 @@ function NewActivity() {
 
             return res.json()
         }).then(res => {
+            localStorage.setItem("actid", res["actid"])
             setCreatingSuccess(true)
         }).catch(err => console.log(err))
 
@@ -102,7 +103,7 @@ function NewActivity() {
 
     if (creatingSuccess) {
         return (
-            <Redirect to={"/dashboard"}/>
+            <Redirect to={"/activity/new/invite"}/>
         )
     }
 

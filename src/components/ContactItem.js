@@ -9,19 +9,22 @@ import {Redirect} from "react-router-dom";
 
 function ContactItem(props){
     const contact = props.contact
+    const inviteMode = props.invite
 
     const URLEndContext = useContext(EndPointContext)
     const deleteLink = URLEndContext + "/contact/" + contact["contactid"] + "/delete"
 
     const [redirect, setRedirect] = useState(false)
     const [deleteConfirm, setDeleteConfirm] = useState(false);
+
+    const [isInvited, setIsInvited] = useState(false)
     function deleteSet(){
         setDeleteConfirm(true)
     }
 
     function handleDelete(){
         fetch(deleteLink, {
-            method: "GET",
+            method: "POST",
             credentials: "include",
             headers: {
             "Content-Type": "text/plain",
@@ -41,12 +44,63 @@ function ContactItem(props){
         setRedirect(true)
     }
 
+    function handleInvite(){
+        if (!isInvited) {
+            let listStr = localStorage.getItem("InviteIds")
+            let list = JSON.parse(listStr)
+
+            let json = {
+            contact_id: contact["contactid"]
+            }
+            list.push(json)
+            let finalStr = JSON.stringify(list)
+            localStorage.setItem("InviteIds", finalStr)
+            setIsInvited(true)
+        }
+    }
+
+    function handleUninvite(){
+        if (isInvited) {
+            let listStr = localStorage.getItem("InviteIds")
+            let list = JSON.parse(listStr)
+            for (let i = 0; i < list.length; i++){
+                if (list[i].contact_id === contact["contactid"]){
+                    list.splice(i, 1)
+                    break
+                }
+            }
+            let finalStr = JSON.stringify(list)
+            localStorage.setItem("InviteIds", finalStr)
+            setIsInvited(false)
+        }
+    }
+
 
     function getButton(){
+        if (inviteMode){
+            if(!isInvited){
+                return (
+                    <Button variant="outline-success" onClick = {handleInvite}>Invite</Button>
+                )
+            }
+            else{
+                return(<Button variant="success" onClick = {handleUninvite}>Cancel Invite</Button>)
+
+            }
+
+
+        }
+
         if (!deleteConfirm){
-            return(<Button variant="secondary" onClick={deleteSet}>Delete</Button>)
+            return(<div>
+                <Button variant="warning" onClick = {handleEdit}>Edit</Button>
+                <Button variant="secondary" onClick={deleteSet}>Delete</Button>
+            </div>)
         }else{
-            return(<Button variant="danger" onClick={handleDelete}>Confirm Delete</Button>)
+            return(<div>
+                <Button variant="danger" onClick={handleDelete}>Confirm Delete</Button>
+                <Button variant="warning" onClick = {handleEdit}>Edit</Button>
+            </div>)
         }
     }
 
@@ -67,7 +121,6 @@ function ContactItem(props){
                     <Card.Text>{"Ph.: " + contact["phone"]}</Card.Text>
                     <br/>
                     <ButtonGroup>
-                        <Button variant="warning" onClick = {handleEdit}>Edit</Button>
                         {getButton()}
 
                     </ButtonGroup>
