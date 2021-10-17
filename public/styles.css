@@ -87,36 +87,29 @@ button:active {
 }
 
 
-td{
-  height:600px
-}
 
 .box1{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30vh;
-  width: 24rem;
-  height: 20rem;
+  width: 20rem;
+  height: 16rem;
 }
 .box2{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30vh;
-  width: 24rem;
-  height: 20rem;
+  width: 20rem;
+  height: 16rem;
 }
 .box3{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30vh;
-  width: 24rem;
-  height: 20rem;
+  width: 20rem;
+  height: 16rem;
 }
 
-td.center{
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .home-content-detail{
   display: flex;
@@ -131,8 +124,9 @@ td.center{
   margin-left:auto;
   margin-right: auto;
   min-width: 290px;
-  width: 24rem;
-  height: 20rem;
+  min-height: auto;
+  width: 20rem;
+  height: 16rem;
   color: #FEFBF3;
   background-color: black;
 }
@@ -143,10 +137,10 @@ td.center{
 }
 
 .home-content-img-size{
-  width: 24rem;
-  height: 20rem;
-  min-height: 2.4rem;
-  min-width: 2rem;
+  width: 20rem;
+  height: 16rem;
+  min-height: 1.2rem;
+  min-width: 1rem;
 }
 
 .activity{
@@ -157,7 +151,7 @@ td.center{
 .login_signup_Firm {
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
+    height: 60vh;
     min-height: 350px;
     max-width: 600px;
     min-width: 250px;
@@ -177,7 +171,7 @@ td.center{
     transform: rotate(2deg);
     padding: 0.2rem 1.2rem;
     border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    background-color: #fdcb6e;
+    background-color: #E6E6E6;
     font-size: 1.5rem;
   }
   
@@ -208,8 +202,8 @@ td.center{
   }
   
 .background {
-  background-color: #DBD0C0;
-  min-height: 100%;
+  background-color: #F7F6F2;
+  height: 100vh;
 }
 
 /*Dashboard*/

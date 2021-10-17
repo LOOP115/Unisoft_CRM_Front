@@ -32,10 +32,18 @@ function Signup() {
   const [regSuccess, setRegSuccess] = useState(false)
 
   const signupStyle = {
-    backgroundColor: "#f8f0df",
+    backgroundColor: "#E6E6E6",
     fontFamily: "Architects Daughter",
     textAlign: "center",
+    height: "86vh",
+    minHeight: "auto",
+    maxHeight: "auto",
+    marginTop: "0"
   }
+  const marginTop = {
+    marginTop:"2rem"
+  }
+
   const mergeFirm = {
     mergeLeft: "100px"
   }
@@ -103,7 +111,7 @@ function Signup() {
     <div className = "background"><br /><br />
       <div style = {signupStyle} className = "login_signup_Firm">
         <h2> Signup </h2>
-        <div >
+        <div style = {marginTop}>
           <Form >
             <Form.Group>
               <Form.Label>Email</Form.Label>
@@ -166,7 +174,6 @@ function Signup() {
                   onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-
             <br />
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -184,13 +191,13 @@ function Signup() {
             </Dropdown>
             Your date of birth: {formatDate}
 
-            <br /><br /><br />
+            <br /><br />
 
             <Button variant="dark" block size="lg" onClick={handleClick} className="btn3" disabled={!validForm()}>
               Register
             </Button>
           </Form>
-          <p>Already have account? <a href="/login">Log in</a> </p>
+          <p style =  {marginTop}>Already have account? <a href="/login">Log in</a> </p>
         </div>         
       </div>
       <br /><br /><br />

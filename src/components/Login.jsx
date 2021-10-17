@@ -17,9 +17,12 @@ function Login(props) {
   const [redirect, setRedirect] = useState(null);
   const [loginFailed, setLoginFailed] = useState(false)
   const loginStyle = {
-    backgroundColor: "#f8f0df",
+    backgroundColor: "#E6E6E6",
     fontFamily: "Architects Daughter",
     textAlign: "center",
+    minHeight: "auto",
+    maxHeight: "auto",
+    marginTop: "7rem"
   }
 
   function handleClick(e) {
@@ -93,13 +96,14 @@ function Login(props) {
               <p>Does not have an account? <a href="/Signup">Sign up</a> </p>
             </Form>
           </div>
+          <Footer />
           </div>
         </>
     )
   }
   return (
     <div className = "background">
-    <br /><br /><br /><br /><br /><br /><br /><br />
+    <br />
       <div style={loginStyle} className = "login_signup_Firm">
         <Form >
           <h1>Login</h1> <br /><br /><br /><br />
