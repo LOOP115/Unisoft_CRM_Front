@@ -31,6 +31,10 @@ export default function TheNavbar(props) {
             </Nav>
 
             <Nav>
+                <Nav.Link href="/profile"><h5>Profile</h5></Nav.Link>
+            </Nav>
+
+            <Nav>
                 <Nav.Link href="/logout" ><h5>Logout</h5></Nav.Link>
             </Nav>
             

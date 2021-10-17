@@ -16,6 +16,7 @@ import NewContact from "./NewContact";
 import EditContact from "./EditContact";
 import InviteContact from "./InviteContact";
 import Invitation from "./Invitation";
+import Profile from "./Profile";
 //import AddCard from "./AddCard";
 
 
@@ -79,6 +80,9 @@ function App() {
                             <Invitation/>
                         </Route>
 
+                        <Route exact path={"/profile"}>
+                            <Profile/>
+                        </Route>
                     </Switch>
                 </EndPointContext.Provider>
             </BrowserRouter>
