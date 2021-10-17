@@ -34,7 +34,7 @@ function NewContact() {
         marginTop: "3%"
     }
 
-    
+
 
     function validForm(){
         return (firstName.length > 0 && lastName.length > 0 && company.length > 0 && email.length > 0 && phone.length > 0)
@@ -73,6 +73,7 @@ function NewContact() {
 
             return res.json()
         }).then(res => {
+            //localStorage.removeItem("contactInfo")
             setCreatingSuccess(true)
         }).catch(err => console.log(err))
 
