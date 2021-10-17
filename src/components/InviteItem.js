@@ -28,11 +28,21 @@ function InviteItem(props){
         }).catch(error => console.log('error', error))
     }
 
+    function showBadge(){
+        if(person["accept"] === "Not a user"){
+            return <Badge bg={"primary"}>Not a User</Badge>
+        } else if (person["accept"] === true){
+            return <Badge bg={"success"}>√</Badge>
+        } else{
+            return <Badge bg={"danger"}>×</Badge>
+        }
+
+    }
+
     return (<div>
                 {person["firstname"] + " " + person["lastname"]}
                 <Button variant="link" onClick={handleRemove}>Remove</Button>
-            <Badge bg={"success"}>√</Badge>
-            <Badge bg={"danger"}>×</Badge>
+            {showBadge()}
 
             </div>
 
