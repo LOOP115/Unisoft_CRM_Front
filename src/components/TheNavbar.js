@@ -23,6 +23,10 @@ export default function TheNavbar(props) {
             </Nav>
 
             <Nav>
+                <Nav.Link href="/invitation"><h5>Invitation</h5></Nav.Link>
+            </Nav>
+
+            <Nav>
                 <Nav.Link href="/contacts"><h5>Contacts</h5></Nav.Link>
             </Nav>
 
