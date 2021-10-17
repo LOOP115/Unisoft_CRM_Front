@@ -5,10 +5,13 @@ import {Link, Redirect} from "react-router-dom";
 function Header(){
     const headerStyle = {
         textAlign: "center",
+
       };
     
       return (
-        <header style = {headerStyle}><br/ ><h1>Client Relationship Management System</h1> </header>       
+        
+        <header style = {headerStyle}><h1 style ={{fontSize:"5rem"}}>Client Relationship Management System</h1> </header>      
+        
       );
 }
 

@@ -5,11 +5,12 @@ function Footer(){
 
     const footerStyle ={
         backgroundColor : "#4A403A",
+        marginBottom: "-0%",
         color : "lightGray",
         textAlign : "center",
-        height: "50px",
-        marginTop: "1%",
-        position: "relative",
+        height: "4rem",
+        width: "100%",
+        position: "absolute",
         bottom: "0"
     };
 

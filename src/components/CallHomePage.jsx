@@ -7,6 +7,7 @@ function CallHomePage(){
     const headerStyle = {
         margin: "auto",
         width : "auto",
+        height: "25vh",
         backgroundColor: "#E6E6E6",
         minHeight: "250px",
         bottom : "0px",    
@@ -20,16 +21,16 @@ function CallHomePage(){
     return (
     <div style = {wholeColor} className = "home-style">
         <div style = {headerStyle}>
+        < br/>< br/>< br/>
         <Header />
         < br/>
         {firstButton()}
         {"- or -"}
         {secondtButton() }
         </div>
-        <div style = {{marginTop:"1%"}}>
+        
+        <div style = {{height:"75vh"}}>
         <Info />
-        </div>
-        <div style = {{marginTop:"3%"}}>
         <Footer />
         </div>
     </div>

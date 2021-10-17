@@ -73,6 +73,7 @@ function App() {
                 </EndPointContext.Provider>
             </BrowserRouter>
         </div>
+        
   );
 }
 export default App;
