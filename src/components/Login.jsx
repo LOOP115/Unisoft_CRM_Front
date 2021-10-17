@@ -89,10 +89,10 @@ function Login(props) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-              </Form.Group>
+              </Form.Group><br/><br/>
               <Button block size="lg" type="submit" disabled={!validForm()} onClick={handleClick}>
                 Login
-              </Button>
+              </Button><br/>
               <p>Does not have an account? <a href="/Signup">Sign up</a> </p>
             </Form>
           </div>

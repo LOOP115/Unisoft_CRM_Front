@@ -97,12 +97,15 @@ function Signup() {
 
   if (regSuccess) {
     return (
-        <div className = "background" style = {signupStyle}>
-          <h1>Welcome, {username}!</h1>
+        <div className = "background" style = {{height: "100vh"}}><br/>
+        <div>
+          <h1 style = {{marginTop:"3rem"}}>Welcome, {username}!</h1>
           <br/>
           <h3>Click the following button to login with your credentials</h3>
           <br/>
           <Link to={"login"}><Button>login</Button></Link>
+        </div>
+        <Footer />
         </div>
     )
   }
