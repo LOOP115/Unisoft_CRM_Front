@@ -6,6 +6,8 @@ export default function TheNavbar(props) {
     return(
         <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
             <div style = {{  marginLeft: "1%"}}></div>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
             <Navbar.Brand href="#home">
                 <img
                     alt=""
@@ -13,9 +15,9 @@ export default function TheNavbar(props) {
                     width="40"
                     height="40"
                     className="d-inline-block align-top"
-                    style = {{marginLeft:"26%"}}
-                />{'    '}
-                <h3>CRMS</h3>
+                    style = {{marginLeft:"4.5%"}}
+                />
+                <h3 style = {{marginLeft:"1%"}}>CRMS</h3>
             </Navbar.Brand>
             <div style = {{  marginLeft: "5%"}}></div>
             <Nav>
@@ -37,7 +39,7 @@ export default function TheNavbar(props) {
             <Nav>
                 <Nav.Link href="/logout" ><h5>Logout</h5></Nav.Link>
             </Nav>
-            
+            </Navbar.Collapse>
         </Navbar>
     )
 }
