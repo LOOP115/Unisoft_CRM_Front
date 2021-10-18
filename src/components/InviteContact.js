@@ -181,14 +181,14 @@ function InviteContact(){
     }
 
     return(
-        <div className = "dashboard-background-style">
-            <TheNavbar/>
-            <div style = {{  marginLeft: "2%"}}>
-
+        <div style = {{height:"100vh"}}>
+            <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
+            <div className = "dashboard-background-style">
+            <div style = {{marginLeft: "5rem"}}>
                 <br/>
                 <h1>Invite Contacts</h1>
                 <br/>
-                <Link to={"/dashboard"}><Button variant={"warning"} size={"sm"}>Proceed with noone invited</Button></Link>
+                <Link to={"/dashboard"}><Button variant={"warning"} size={"sm"}>Proceed with no one invited</Button></Link>
 
                 <br/>
                 <br/>
@@ -220,6 +220,7 @@ function InviteContact(){
                 <Button size={"lg"} onClick={handleInvite}>Invite</Button>
             </div>
             <div style = {{marginTop:"22%"}}><Footer/></div>
+        </div>
         </div>
     )
 }

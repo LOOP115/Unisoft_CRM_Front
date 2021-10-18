@@ -144,6 +144,7 @@ function Contacts(){
     return(
         <div style = {{height:"100vh"}}>
             <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
+            <div className = "dashboard-background-style">
                 <div style = {{  marginLeft: "2%"}}>           
                 <br/>
                 <h1>Contacts</h1>
@@ -177,6 +178,7 @@ function Contacts(){
                 {printList()}
         </div>
         <div style = {{marginTop:"22%"}}><Footer/></div>
+        </div>
         </div>
     )
 }

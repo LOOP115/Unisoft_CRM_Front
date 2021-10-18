@@ -100,8 +100,8 @@ function NewContact() {
             <div className = "login_signup_Firm" style = {contactStyle}>
             <Link to={"/contacts"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
                 {failWarning}
-                <div className="Signup">
-                    
+                <div style = {{marginLeft:"5rem", marginRight: "5rem"}}>
+                    <br/><br/>
                     <h2> New Contacts </h2>
                     <Form >
                     <br/>

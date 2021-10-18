@@ -7,6 +7,8 @@ import {ButtonGroup, Dropdown} from "react-bootstrap";
 import Calendar from "react-calendar";
 import Button from "react-bootstrap/Button";
 import {Link} from "react-router-dom";
+import Footer from "./Footer";
+
 let customParseFormat = require('dayjs/plugin/customParseFormat')
 dayjs.extend(customParseFormat)
 
@@ -30,6 +32,15 @@ function Profile(){
 
 
     const formatDate = dayjs(birthday).format('YYYY-MM-DD');
+    const profileStyle = {
+        backgroundColor: "#E6E6E6",
+        fontFamily: "Architects Daughter",
+        textAlign: "center",
+        height: "86vh",
+        minHeight: "auto",
+        maxHeight: "auto",
+        marginTop: "0"
+      }
 
 
     const onChange = date => {
@@ -286,12 +297,17 @@ function Profile(){
     }
 
     return(
-        <div>
+        <div className = "background">
             <TheNavbar/>
-            <h1>Profile</h1>
-            <br/>
-            <br/>
-            {display()}
+            <div className = "login_signup_Firm" style = {profileStyle}>
+                <div style = {{marginLeft:"5rem", marginRight: "5rem"}}>
+                <h1>Profile</h1>
+                <br/>
+                <br/>
+                {display()}
+            </div>
+            </div>
+            <div style = {{marginTop:"1%"}}><Footer/></div>
         </div>
     )
 }

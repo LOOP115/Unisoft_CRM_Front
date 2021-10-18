@@ -28,11 +28,14 @@ function NewContact() {
     const [creatingFailed, setCreatingFailed] = useState(false)
     const [creatingSuccess, setCreatingSuccess] = useState(false)
     const contactStyle = {
-        backgroundColor: "#f8f0df",
+        backgroundColor: "#E6E6E6",
         fontFamily: "Architects Daughter",
         textAlign: "center",
-        marginTop: "3%"
-    }
+        height: "86vh",
+        minHeight: "auto",
+        maxHeight: "auto",
+        marginTop: "0"
+      }
 
 
 
@@ -102,10 +105,10 @@ function NewContact() {
         <div className = "background">
             <TheNavbar/>
             <div className = "login_signup_Firm" style = {contactStyle}>
-                <Link to={"/contacts"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
+            <Link to={"/contacts"}><Button variant={"warning"} size={"sm"}>Go back</Button></Link>
                 {failWarning}
-                <div className="Signup">
-
+                <div style = {{marginLeft:"5rem", marginRight: "5rem"}}>
+                <br/><br/>
                     <h2> Edit Contact </h2>
                     <Form >
                         <br/>
