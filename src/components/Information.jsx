@@ -3,7 +3,7 @@ import React from "react";
 function Info(){
     const textStyle = {
         textAlign:"center",
-        minWidth: "500px",
+        minWidth: "300px",
     }
 
     return(
