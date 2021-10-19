@@ -268,7 +268,7 @@ function Profile(){
     function showButton(){
         if(lock){
             return(<Button variant="outline-primary" block size="lg" onClick={handleUpdate} className="btn3" disabled={!validForm()}>
-                Update
+                Edit Profile
             </Button>)
         }else{
             return(

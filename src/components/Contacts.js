@@ -11,7 +11,7 @@ import Footer from "./Footer";
 function Contacts(){
     const URLEndContext = useContext(EndPointContext)
     const getDashURL = URLEndContext + '/contact/all'
-    const filterURL = URLEndContext + '/contact/'
+    const filterURL = URLEndContext + '/contact/filter/'
     const CARD_WIDTH = 400
 
     const [redirect, setRedirect] = useState(false)
@@ -161,6 +161,7 @@ function Contacts(){
 
                             <Form.Control
                                 className="mb-2"
+                                inputMode={"text"}
                                 id="Filtering"
                                 placeholder="Filter by Company"
                                 value={filterCompany}
