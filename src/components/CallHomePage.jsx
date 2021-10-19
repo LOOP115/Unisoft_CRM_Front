@@ -8,6 +8,7 @@ function CallHomePage(){
         margin: "auto",
         width : "auto",
         height: "25vh",
+        minHeight:"auto",
         backgroundColor: "#E6E6E6",
         minHeight: "250px",
         bottom : "0px",    
@@ -29,7 +30,7 @@ function CallHomePage(){
         {secondtButton() }
         </div>
         
-        <div style = {{height:"75vh"}}>
+        <div style = {{height:"75vh",minHeight:"auto"}}>
         <Info />
         <Footer />
         </div>

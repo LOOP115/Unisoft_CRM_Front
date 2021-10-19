@@ -72,7 +72,7 @@ function Dashboard(){
         return (
             //do stuff with each thing
             <div>
-                <Row xs={1} md={numRow} className="g-4">
+                <Row xs={1} md={numRow} >
                 {
                     list.map(activity => {
                         return(
@@ -86,10 +86,10 @@ function Dashboard(){
     }
 
     return(
-        <div style = {{height:"100vh"}}>
+        <div style = {{height:"100vh",maxWidth:"100vw", width:"100vw"}}>
             <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
             <div className = "dashboard-background-style">
-                    <div style = {{marginLeft: "2%"}}>
+                    <div style = {{marginLeft: "0.5rem"}}>
                         <br/>
                         <h1>Events</h1>
                         <br/>

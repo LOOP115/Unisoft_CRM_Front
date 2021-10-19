@@ -39,7 +39,7 @@ function InviteItem(props){
 
     }
 
-    return (<div>
+    return (<div  style = {{marginBottom: "2%"}}>
                 {person["firstname"] + " " + person["lastname"]}
                 <Button variant="link" onClick={handleRemove}>Remove</Button>
             {showBadge()}

@@ -113,7 +113,7 @@ function ContactItem(props){
     }
 
     return(
-        <div>
+        <div  style = {{marginBottom: "2%"}}>
 
             <Card>
                 <Card.Body>

@@ -86,19 +86,19 @@ function Invitation(){
     }
 
     return(
-        <div >
-            <TheNavbar/>
-            <div className = "dashboard-background-style">
-                <div style = {{  marginLeft: "2%"}}>
-                    <br/>
-                    <h1>Invitations</h1>
-                    <br/>
-                    <br/>
-                    {printList()}
+        <div style = {{height:"100vh",maxWidth:"100vw", width:"100vw"}}>
+            <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
+                <div className = "dashboard-background-style">
+                    <div style = {{marginLeft: "0.5rem"}}>
+                        <br/>
+                        <h1>Invitations</h1>
+                        <br/>
+                        <br/>
+                        {printList()}
+                    </div>
+                    <div style = {{marginTop:"21%"}}><Footer/></div>
                 </div>
-                <div style = {{marginTop:"21%"}}><Footer/></div>
-            </div>
-
+           
         </div>
     )
 }

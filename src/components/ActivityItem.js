@@ -84,7 +84,7 @@ function ActivityItem(props){
 
 
     return(
-        <div>
+        <div style = {{marginBottom: "2%"}}>
             <Card>
                 <Card.Header>{activity["time"]}</Card.Header>
                 <Card.Body>
