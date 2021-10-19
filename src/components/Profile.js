@@ -64,7 +64,7 @@ function Profile(){
 
         ).then(data => {
             setOgData(data)
-            let temp = data["birth"].slice(6,16)
+            let temp = data["birth"].slice(5,16)
             let date = dayjs(temp, 'D MMM YYYY')
             setBirthday(date.toDate())
             setFirstname(data["firstname"])
@@ -230,8 +230,11 @@ function Profile(){
             if (selected){
                 return (<div>
                     <h3>You are trying to Delete your Account, This operation cannot be reverted, THINK AGAIN BEFORE PROCEED</h3>
+                    <Button variant={"primary"} onClick={unselect} size={"lg"}>Cancel Deletion</Button>
+                    <br/>
+                    <br/>
                     <Button variant={"danger"} size={"sm"} onClick={handleDelete}>Confirm Delete Account</Button>
-                    <Button variant={"primary"} onClick={unselect}>Cancel Deletion</Button>
+
                 </div>)
             }
             return (<Button variant={"danger"} size={"sm"} onClick={handleSelect}>Delete Account</Button>)

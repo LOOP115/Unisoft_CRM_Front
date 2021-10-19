@@ -1,9 +1,10 @@
 import React, {useContext, useEffect, useState} from "react";
 import Card from "react-bootstrap/Card"
-import {Accordion, Table} from "react-bootstrap";
+import {Accordion, ButtonGroup, Table} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {EndPointContext} from "./App";
 import InviteItem from "./InviteItem";
+import {Redirect} from "react-router-dom";
 
 function ActivityItem(props){
     const activity = props.activity
@@ -13,6 +14,7 @@ function ActivityItem(props){
     const getAcceptURL = URLEndContext + "/activity/" + activity["actid"] + "/participants"
 
     const [participants, setParticipants] = useState([])
+    const [editRedirect, setEditRedirect] = useState(false)
 
     useEffect(()=>{
         setup()
@@ -81,14 +83,25 @@ function ActivityItem(props){
         )
     }
 
+    function handleEdit(){
+        localStorage.setItem("actInfo", JSON.stringify(activity))
+        setEditRedirect(true)
+    }
 
+
+    if (editRedirect){
+        return (
+            <Redirect to={"/event/edit"}/>
+        )
+    }
 
     return(
         <div style = {{marginBottom: "2%"}}>
             <Card>
-                <Card.Header>{activity["time"]}</Card.Header>
+
                 <Card.Body>
-                    <Card.Title>{activity["title"]}</Card.Title>
+                    <Card.Title><h4>{activity["title"]}</h4></Card.Title>
+                    <Card.Text>{activity["time"]}</Card.Text>
                     <Card.Subtitle className="mb-2 text-muted">Location: {activity["location"]}</Card.Subtitle>
                     <Card.Text>{activity["desc"]}</Card.Text>
                     <Accordion defaultActiveKey="3">
@@ -100,7 +113,14 @@ function ActivityItem(props){
                         </Accordion.Item>
                     </Accordion>
                     <br/>
-                    <Button variant={"danger"} onClick={handleDelete}>Delete</Button>
+                    <Button variant={"success"}>Send Invitation</Button>
+                    <br/>
+                    <br/>
+                    <ButtonGroup>
+                        <Button variant={"warning"} size={"sm"} onClick={handleEdit}>Edit</Button>
+                        <Button variant={"danger"} size={"sm"} onClick={handleDelete}>Delete</Button>
+                    </ButtonGroup>
+
                 </Card.Body>
             </Card>
         </div>

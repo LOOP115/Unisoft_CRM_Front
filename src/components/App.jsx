@@ -17,6 +17,8 @@ import EditContact from "./EditContact";
 import InviteContact from "./InviteContact";
 import Invitation from "./Invitation";
 import Profile from "./Profile";
+import EditEvent from "./EditEvent";
+import UpdateMail from "./UpdateMail";
 //import AddCard from "./AddCard";
 
 
@@ -83,6 +85,15 @@ function App() {
                         <Route exact path={"/profile"}>
                             <Profile/>
                         </Route>
+
+                        <Route exact path={"/event/edit"}>
+                            <EditEvent/>
+                        </Route>
+
+                        <Route exact path={"/updateEmail"}>
+                            <UpdateMail/>
+                        </Route>
+
                     </Switch>
                 </EndPointContext.Provider>
             </BrowserRouter>
