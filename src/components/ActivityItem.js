@@ -14,7 +14,8 @@ function ActivityItem(props){
     const getAcceptURL = URLEndContext + "/activity/" + activity["actid"] + "/participants"
 
     const [participants, setParticipants] = useState([])
-    const [editRedirect, setEditRedirect] = useState(false)
+    const [editRedirect, setEditRedirect] = useState("")
+    const [confirmDelete, setConfirmDelete] = useState(false)
 
     useEffect(()=>{
         setup()
@@ -85,13 +86,42 @@ function ActivityItem(props){
 
     function handleEdit(){
         localStorage.setItem("actInfo", JSON.stringify(activity))
-        setEditRedirect(true)
+        setEditRedirect("/event/edit")
+    }
+
+    function handleInvite(){
+        localStorage.setItem("actInfo", JSON.stringify(activity))
+        setEditRedirect("/sendInvite")
+    }
+
+    function inviteButton(){
+        if(activity["invite"].length > 0){
+            return(<Button variant={"success"} onClick={handleInvite}>Send Invitation</Button>)
+        }
+        return(<Button variant={"outline-success"} disabled={true}>Only 1 Participant</Button>)
+    }
+
+    function handleConfirm(){
+        setConfirmDelete(true)
+    }
+
+    function deleteButton(){
+        if (confirmDelete){
+            return(
+                <Button variant={"danger"} size={"sm"} onClick={handleDelete}>Confirm Delete</Button>
+            )
+        }
+        else{
+            return(
+                <Button variant={"secondary"} size={"sm"} onClick={handleConfirm}>Delete</Button>
+            )
+        }
     }
 
 
-    if (editRedirect){
+    if (editRedirect !== ""){
         return (
-            <Redirect to={"/event/edit"}/>
+            <Redirect to={editRedirect}/>
         )
     }
 
@@ -113,12 +143,12 @@ function ActivityItem(props){
                         </Accordion.Item>
                     </Accordion>
                     <br/>
-                    <Button variant={"success"}>Send Invitation</Button>
+                    {inviteButton()}
                     <br/>
                     <br/>
                     <ButtonGroup>
                         <Button variant={"warning"} size={"sm"} onClick={handleEdit}>Edit</Button>
-                        <Button variant={"danger"} size={"sm"} onClick={handleDelete}>Delete</Button>
+                        {deleteButton()}
                     </ButtonGroup>
 
                 </Card.Body>

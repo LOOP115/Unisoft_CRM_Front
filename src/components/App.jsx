@@ -19,6 +19,7 @@ import Invitation from "./Invitation";
 import Profile from "./Profile";
 import EditEvent from "./EditEvent";
 import UpdateMail from "./UpdateMail";
+import InviteMail from "./InviteMail";
 //import AddCard from "./AddCard";
 
 
@@ -92,6 +93,10 @@ function App() {
 
                         <Route exact path={"/updateEmail"}>
                             <UpdateMail/>
+                        </Route>
+
+                        <Route exact path={"/sendInvite"}>
+                            <InviteMail/>
                         </Route>
 
                     </Switch>

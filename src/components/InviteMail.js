@@ -6,10 +6,10 @@ import {EndPointContext} from "./App";
 import {Link} from "react-router-dom";
 
 
-function UpdateMail(){
+function InviteMail(){
 
     const URLEndContext = useContext(EndPointContext)
-    const URL = URLEndContext + "/activity/" + JSON.parse(localStorage.getItem("actInfo"))["actid"] + "/update/send"
+    const URL = URLEndContext + "/activity/" + JSON.parse(localStorage.getItem("actInfo"))["actid"] + "/invite/send"
 
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
@@ -28,20 +28,18 @@ function UpdateMail(){
                 'Access-Control-Allow-Credentials': 'true'
             },
             body: JSON.stringify({
-                    title: title,
-                    content: body
-                })
+                title: title,
+                content: body
+            })
         }).then(res => {
             if (res.status !== 200) {
                 alert("Oops, failed to send")
                 throw Error("Creation failed");
 
             }
-            console.log(res.status)
             return res.text()
         }).then(res => {
             setRedirect(true)
-            console.log(res)
         }).catch(err => console.log(err))
     }
 
@@ -52,7 +50,7 @@ function UpdateMail(){
             <div>
                 <TheNavbar/>
                 <h1>
-                    Email Successfully Sent
+                    Invitation Successfully Sent
                 </h1>
                 <br/>
                 <br/>
@@ -65,12 +63,11 @@ function UpdateMail(){
         <div>
             <TheNavbar/>
             <h1>
-                Send Update Email
+                Send Invitation
             </h1>
             <br/>
             <br/>
-            <h4>You've Successfully edited the event</h4>
-            <h4>You can send an email and get all participants updated down below</h4>
+            <h4>You can send an email and get all participants updated down below, participants who has an account will receive an invitation on their dashboard</h4>
             <Form>
                 <Form.Group>
                     <Form.Label>Email Title *</Form.Label>
@@ -91,17 +88,16 @@ function UpdateMail(){
                         onChange={(e) => {
                             setBody(e.target.value);
                         }}
-                        />
+                    />
                 </Form.Group>
                 <Button disabled={!checkInput()} onClick={handleSubmit}>Send</Button>
             </Form>
 
             <br/>
             <br/>
-            <h4>or you can continue without sending an email.</h4>
-            <Link to={"/dashboard"}><Button>Continue w/o sending</Button></Link>
+            <Link to={"/dashboard"}><Button>Cancel</Button></Link>
         </div>
     )
 }
 
-export default UpdateMail
+export default InviteMail

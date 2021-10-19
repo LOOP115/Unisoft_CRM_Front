@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import {Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import Footer from "./Footer";
+import InvitationItem from "./InvitationItem";
 
 function Invitation(){
     const URLEndContext = useContext(EndPointContext)
@@ -76,7 +77,7 @@ function Invitation(){
                     {
                         list.map(activity => {
                             return(
-                                <ActivityItem activity={activity} invitation={true}/>
+                                <InvitationItem activity={activity}/>
                             )
                         })
                     }
