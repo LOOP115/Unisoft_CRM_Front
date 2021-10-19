@@ -14,12 +14,14 @@ function UpdateMail(){
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [redirect, setRedirect] = useState(false)
+    const [sending, setSending] = useState(false)
 
     function checkInput(){
         return(title.length > 0)
     }
 
     function handleSubmit(){
+        setSending(true)
         fetch(URL, {
             method: "POST",
             credentials: "include",
@@ -33,6 +35,7 @@ function UpdateMail(){
                 })
         }).then(res => {
             if (res.status !== 200) {
+                setSending(false)
                 alert("Oops, failed to send")
                 throw Error("Creation failed");
 
@@ -57,6 +60,17 @@ function UpdateMail(){
                 <br/>
                 <br/>
                 <Link to={"/dashboard"}><Button>Go back</Button></Link>
+            </div>
+        )
+    }
+
+    if (sending){
+        return (
+            <div>
+                <TheNavbar/>
+                <h1>
+                    Sending...
+                </h1>
             </div>
         )
     }

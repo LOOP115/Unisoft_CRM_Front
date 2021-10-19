@@ -113,6 +113,7 @@ function Signup() {
   return (
     <div className = "background"><br /><br />
       <div style = {signupStyle} className = "login_signup_Firm">
+        <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
         <h2> Signup </h2>
         <div style = {marginTop}>
           <Form >

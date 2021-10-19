@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert"
 import Button from "react-bootstrap/Button";
 import './CSS/Login.css'
-import { Redirect } from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import { EndPointContext } from './App'
 import Footer from "./Footer";
 
@@ -11,6 +11,7 @@ function Login(props) {
 
   const URLEndContext = useContext(EndPointContext)
   const loginURL = URLEndContext + '/login'
+  const resetURL = URLEndContext + '/reset_password'
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -73,6 +74,7 @@ function Login(props) {
               Incorrect Email/Password!
             </Alert>
             <Form >
+              <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
               <Form.Group size="lg" controlId="email">
                 <Form.Label >Email</Form.Label>
                 <Form.Control
@@ -93,7 +95,8 @@ function Login(props) {
               <Button block size="lg" type="submit" disabled={!validForm()} onClick={handleClick}>
                 Login
               </Button><br/>
-              <p>Does not have an account? <a href="/Signup">Sign up</a> </p>
+              <p>Don't have an account? <a href="/Signup">Sign up</a> </p>
+              <p>Forgot your Password? <a href={resetURL} target="_blank">Reset here</a>.</p>
             </Form>
           </div>
           <Footer />
@@ -106,6 +109,7 @@ function Login(props) {
     <br />
       <div style={loginStyle} className = "login_signup_Firm">
         <Form >
+          <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
           <h1>Login</h1> <br /><br /><br /><br />
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label><br />
@@ -131,37 +135,15 @@ function Login(props) {
             Login
           </Button>
           <br /><br />
-          <p>Do not have an account? <a href="/Signup">Sign up</a> </p>
+          <p>Don't have an account? <a href="/Signup">Sign up</a> </p>
+          <br/>
+          <p>Forgot your Password? <a href={resetURL} target="_blank">Reset here</a>.</p>
         </Form>
       </div>
       <br /><br /><br /><br /><br /><br /><br /><br /><br />
       <Footer />
       </div>
   )
-
-  // return (
-  //   <div className="container">
-  //     <div className="heading">
-  //       <h1>Log in</h1>
-  //     </div>
-  //     <div className="form">
-  //       <form>
-  //         <label>Email: </label>
-  //         <input name="email" type="text"/>
-  //         <br />
-  //         <br />
-  //         <label>Password: </label>
-  //         <input name="password" type="text" />
-  //         <br />
-  //         <br />
-  //       </form>
-  //
-  //       <button className="btn4" type="submit">
-  //         Login
-  //       </button>
-  //     </div>
-  //   </div>
-  // );
 }
 
 export default Login;
