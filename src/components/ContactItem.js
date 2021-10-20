@@ -117,10 +117,11 @@ function ContactItem(props){
 
             <Card>
                 <Card.Body>
-                    <Card.Title>{contact["lastname"] + ", " + contact["firstname"]}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{contact["company"]}</Card.Subtitle>
-                    <Card.Text>{contact["email"]}</Card.Text>
-                    <Card.Text>{"Ph.: " + contact["phone"]}</Card.Text>
+                    <Card.Title>{<h4>{contact["lastname"] + ", " + contact["firstname"]}</h4>}</Card.Title>
+                    <br/>
+                    <Card.Text>{<h6>Company: </h6>} {<p style = {{fontSize:"1rem"}}> {contact["company"]}</p>}</Card.Text>
+                    <Card.Text>{<h6>Email: </h6>} {<p style = {{fontSize:"1rem"}}>{contact["email"]}</p>}</Card.Text>
+                    <Card.Text>{<h6>Phone Number: </h6>} {<p style = {{fontSize:"1rem"}}>{contact["phone"]}</p>}</Card.Text>
                     <br/>
                     <ButtonGroup>
                         {getButton()}

@@ -131,9 +131,9 @@ function ActivityItem(props){
 
                 <Card.Body>
                     <Card.Title><h4>{activity["title"]}</h4></Card.Title>
-                    <Card.Text>{activity["time"]}</Card.Text>
-                    <Card.Subtitle className="mb-2 text-muted">Location: {activity["location"]}</Card.Subtitle>
-                    <Card.Text>{activity["desc"]}</Card.Text>
+                    <Card.Text>{<h7>{activity["time"]}</h7>}</Card.Text>
+                    <Card.Text>Location: {activity["location"]}</Card.Text>
+                    <Card.Text>{activity["desc"]}</Card.Text><br/>
                     <Accordion defaultActiveKey="3">
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>Show Participants</Accordion.Header>
