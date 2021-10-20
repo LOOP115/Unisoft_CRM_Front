@@ -131,7 +131,7 @@ function ActivityItem(props){
 
                 <Card.Body>
                     <Card.Title><h4>{activity["title"]}</h4></Card.Title>
-                    <Card.Text>{<h7>{activity["time"]}</h7>}</Card.Text>
+                    <Card.Text>{<h6>{activity["time"]}</h6>}</Card.Text>
                     <Card.Text>Location: {activity["location"]}</Card.Text>
                     <Card.Text>{activity["desc"]}</Card.Text><br/>
                     <Accordion defaultActiveKey="3">

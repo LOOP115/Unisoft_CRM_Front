@@ -184,7 +184,7 @@ function InviteContact(){
         <div style = {{height:"100vh"}}>
             <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
             <div className = "dashboard-background-style">
-            <div style = {{marginLeft: "5rem"}}>
+            <div style = {{marginLeft: "0.5rem"}}>
                 <br/>
                 <h1>Invite Contacts</h1>
                 <br/>
