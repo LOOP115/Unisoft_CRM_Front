@@ -70,7 +70,7 @@ function InvitationItem(props){
         }
         if (confirmDelete){
             return(
-                <Button variant={"danger"} size={"sm"} onClick={handleDelete}>Confirm Delete</Button>
+                <Button variant={"danger"} size={"sm"} onClick={handleDelete} style={{ marginRight:"0.5rem"}}>Confirm Delete</Button>
             )
         }
         else{
@@ -83,7 +83,7 @@ function InvitationItem(props){
     function acceptButton(){
         if(!activity["accept"]){
             return (
-                <Button variant={"success"} onClick={handleAccept}>Accept</Button>
+                <Button variant={"success"} onClick={handleAccept} style={{ marginRight:"0.5rem"}}>Accept</Button>
             )
         }
         return(<Button variant={"outline-success"} disabled={true}>Accepted</Button>)

@@ -80,7 +80,7 @@ function ContactItem(props){
         if (inviteMode){
             if(!isInvited){
                 return (
-                    <Button variant="outline-success" onClick = {handleInvite}>Invite</Button>
+                    <Button variant="outline-success" onClick = {handleInvite}style={{ marginRight:"0.5rem"}}>Invite</Button>
                 )
             }
             else{
@@ -93,13 +93,13 @@ function ContactItem(props){
 
         if (!deleteConfirm){
             return(<div>
-                <Button variant="warning" onClick = {handleEdit}>Edit</Button>
+                <Button variant="warning" onClick = {handleEdit}style={{ marginRight:"0.5rem"}}>Edit</Button>
                 {'   '}
                 <Button variant="secondary" onClick={deleteSet}>Delete</Button>
             </div>)
         }else{
             return(<div>
-                <Button variant="danger" onClick={handleDelete}>Confirm Delete</Button>
+                <Button variant="danger" onClick={handleDelete} style={{ marginRight:"0.5rem"}}>Confirm Delete</Button>
                 {'   '}
                 <Button variant="warning" onClick = {handleEdit}>Edit</Button>
             </div>)

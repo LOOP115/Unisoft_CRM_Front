@@ -147,7 +147,7 @@ function ActivityItem(props){
                     <br/>
                     <br/>
                     <ButtonGroup>
-                        <Button variant={"warning"} size={"sm"} onClick={handleEdit}>Edit</Button>
+                        <Button variant={"warning"} size={"sm"} style={{ marginRight:"0.5rem"}} onClick={handleEdit}>Edit</Button>
                         {deleteButton()}
                     </ButtonGroup>
 
