@@ -117,7 +117,7 @@ function ContactItem(props){
 
             <Card>
                 <Card.Body>
-                    <Card.Title>{<h4>{contact["lastname"] + ", " + contact["firstname"]}</h4>}</Card.Title>
+                    <Card.Title>{<h4>{contact["firstname"] + ' ' + contact["lastname"] }</h4>}</Card.Title>
                     <br/>
                     <Card.Text>{<h6>Company: </h6>} {<p style = {{fontSize:"1rem"}}> {contact["company"]}</p>}</Card.Text>
                     <Card.Text>{<h6>Email: </h6>} {<p style = {{fontSize:"1rem"}}>{contact["email"]}</p>}</Card.Text>
