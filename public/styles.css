@@ -3,7 +3,8 @@
 	width:70%;
 }
 body{
-  overflow-x: hidden
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 button:active {
@@ -183,6 +184,7 @@ button:active {
   }
   
 .background {
+  overflow-y: visible;
   background-color: #F7F6F2;
   min-height: 100vh;
   height: auto;
@@ -191,6 +193,7 @@ button:active {
 
 /*Dashboard*/
 .dashboard-background-style{
+  overflow-y: visible;
   background-color: #F7F6F2;
   min-height: 90vh;
   height: auto;

@@ -21,9 +21,8 @@ function Login(props) {
     backgroundColor: "#E6E6E6",
     fontFamily: "Architects Daughter",
     textAlign: "center",
-    minHeight: "auto",
-    maxHeight: "auto",
-    marginTop: "7rem"
+    height: "80vh",
+    marginTop: "5rem"
   }
 
   function handleClick(e) {
@@ -68,13 +67,15 @@ function Login(props) {
   if (loginFailed){
     return (<>
         <div className = "background">
-          <br/><br/><br/><br/>
+        <br/>
           <div style={loginStyle} className = "login_signup_Firm">
             <Alert variant="danger">
               Incorrect Email/Password!
             </Alert>
+            <br/><br/>
             <Form >
               <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
+              <br /><br /><br /><br/><br/>
               <Form.Group size="lg" controlId="email">
                 <Form.Label >Email</Form.Label>
                 <Form.Control
@@ -83,7 +84,7 @@ function Login(props) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-              </Form.Group>
+              </Form.Group><br/><br/>
               <Form.Group size="lg" controlId="password">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
@@ -94,7 +95,7 @@ function Login(props) {
               </Form.Group><br/><br/>
               <Button block size="lg" type="submit" disabled={!validForm()} onClick={handleClick}>
                 Login
-              </Button><br/>
+              </Button><br/><br/><br/>
               <p>Don't have an account? <a href="/Signup">Sign up</a> </p>
               <p>Forgot your Password? <a href={resetURL} target="_blank">Reset here</a>.</p>
             </Form>
@@ -110,7 +111,8 @@ function Login(props) {
       <div style={loginStyle} className = "login_signup_Firm">
         <Form >
           <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
-          <h1>Login</h1> <br /><br /><br /><br />
+          <br />
+          <h1>Login</h1> <br /><br />
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label><br />
             <Form.Control

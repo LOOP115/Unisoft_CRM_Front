@@ -38,7 +38,7 @@ function Signup() {
     height: "86vh",
     minHeight: "auto",
     maxHeight: "auto",
-    marginTop: "0"
+    marginTop: "2rem"
   }
   const marginTop = {
     marginTop:"2rem"
@@ -111,9 +111,11 @@ function Signup() {
   }
 
   return (
-    <div className = "background"><br /><br />
+    <div className = "background">
+    <br/>
       <div style = {signupStyle} className = "login_signup_Firm">
         <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
+        <br /><br /><br />
         <h2> Signup </h2>
         <div style = {marginTop}>
           <Form >
