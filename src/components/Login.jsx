@@ -111,7 +111,7 @@ function Login(props) {
       <div style={loginStyle} className = "login_signup_Firm">
         <Form >
           <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
-          <br />
+          <br /><br/><br/>
           <h1>Login</h1> <br /><br />
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label><br />
@@ -136,13 +136,11 @@ function Login(props) {
           <Button block size="lg" type="submit" disabled={!validForm()} onClick={handleClick}>
             Login
           </Button>
-          <br /><br />
+          <br /><br /><br/>
           <p>Don't have an account? <a href="/Signup">Sign up</a> </p>
-          <br/>
           <p>Forgot your Password? <a href={resetURL} target="_blank">Reset here</a>.</p>
         </Form>
       </div>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br />
       <Footer />
       </div>
   )
