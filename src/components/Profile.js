@@ -229,7 +229,7 @@ function Profile(){
         if (!lock){
             if (selected){
                 return (<div>
-                    <h3>You are trying to Delete your Account, This operation cannot be reverted, THINK AGAIN BEFORE PROCEED</h3>
+                    <h5 style = {{color:"red"}}>You are trying to Delete your Account, This operation cannot be reverted, THINK AGAIN BEFORE PROCEED</h5>
                     <Button variant={"primary"} onClick={unselect} size={"lg"}>Cancel Deletion</Button>
                     <br/>
                     <br/>
@@ -290,11 +290,17 @@ function Profile(){
 
     if (redirect){
         return (
-            <div>
-                <h1>Deletion Complete</h1>
-                <br/>
-                <br/>
-                <Link to={"/"}><Button>Back to homepage</Button></Link>
+            <div style = {{height:"100vh"}}>
+                <div  style = {{height:"10vh", backgroundColor:"#222831"}}><TheNavbar/></div>
+                    <div className = "dashboard-background-style">
+                        <div style = {{marginTop: "2rem", textAlign:"center"}}>
+                            <h1>Deletion Complete</h1>
+                            <br/>
+                            <br/>
+                            <Link to={"/"}><Button>Back to homepage</Button></Link>
+                        </div>
+                    </div>
+                <Footer/>
             </div>
         )
     }
@@ -303,7 +309,7 @@ function Profile(){
         <div className = "background">
             <TheNavbar/>
             <div className = "login_signup_Firm" style = {profileStyle}>
-                <div style = {{marginLeft:"5rem", marginRight: "5rem"}}>
+                <div style = {{marginLeft:"1rem", marginRight: "1rem"}}>
                 <h1>Profile</h1>
                 <br/>
                 <br/>
