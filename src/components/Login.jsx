@@ -74,7 +74,7 @@ function Login(props) {
             </Alert>
             <br/><br/>
             <Form >
-              <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
+              <a href={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></a>
               <br /><br /><br /><br/><br/>
               <Form.Group size="lg" controlId="email">
                 <Form.Label >Email</Form.Label>
@@ -110,7 +110,7 @@ function Login(props) {
     <br />
       <div style={loginStyle} className = "login_signup_Firm">
         <Form >
-          <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
+          <a href={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></a>
           <br /><br/><br/>
           <h1>Login</h1> <br /><br />
           <Form.Group size="lg" controlId="email">

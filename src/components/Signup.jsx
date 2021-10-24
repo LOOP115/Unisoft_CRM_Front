@@ -103,7 +103,7 @@ function Signup() {
           <br/>
           <h3>Click the following button to login with your credentials</h3>
           <br/>
-          <Link to={"login"}><Button>login</Button></Link>
+          <a href={"/login"}><Button>login</Button></a>
         </div>
         <Footer />
         </div>
@@ -114,7 +114,7 @@ function Signup() {
     <div className = "background">
     <br/>
       <div style = {signupStyle} className = "login_signup_Firm">
-        <Link to={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></Link>
+        <a href={"/"}><Button variant={"warning"} size={"sm"}>Back</Button></a>
         <br /><br /><br />
         <h2> Signup </h2>
         <div style = {marginTop}>
