@@ -11,7 +11,7 @@ function Login(props) {
 
   const URLEndContext = useContext(EndPointContext)
   const loginURL = URLEndContext + '/login'
-  const resetURL = URLEndContext + '/reset_password'
+  const resetURL = 'https://unisoft-back.herokuapp.com/reset_password'
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
