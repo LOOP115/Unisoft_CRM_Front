@@ -4,7 +4,7 @@ import {Accordion, ButtonGroup, Table} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {EndPointContext} from "./App";
 import InviteItem from "./InviteItem";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 function ActivityItem(props){
     const activity = props.activity
@@ -118,6 +118,11 @@ function ActivityItem(props){
         }
     }
 
+    function handleAdd(){
+        localStorage.setItem("actid", activity["actid".toString()])
+        setEditRedirect("/activity/editInvite")
+    }
+
 
     if (editRedirect !== ""){
         return (
@@ -139,6 +144,7 @@ function ActivityItem(props){
                             <Accordion.Header>Show Participants</Accordion.Header>
                             <Accordion.Body>
                                 {getInviteList()}
+                                <Button variant={"primary"} size={"sm"} onClick={handleAdd}>Add Attenders</Button>
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>

@@ -8,12 +8,13 @@ import {Link, Redirect} from "react-router-dom";
 import ContactItem from "./ContactItem";
 import Footer from "./Footer";
 
-function InviteContact(){
+function InviteContact(props){
     const URLEndContext = useContext(EndPointContext)
     const getDashURL = URLEndContext + '/contact/all'
     const filterURL = URLEndContext + '/contact/'
     const activityid = parseInt(localStorage.getItem("actid"))
     const inviteURL = URLEndContext + '/activity/' + activityid + '/invite'
+    const getAreadyInvitedURL = URLEndContext + "/activity/" + activityid + "/participants"
     const CARD_WIDTH = 400
 
     const [redirect, setRedirect] = useState(false)
@@ -46,20 +47,70 @@ function InviteContact(){
 
     function setup(){
         localStorage.setItem("InviteIds", JSON.stringify([]))
-        fetch(getDashURL, {method:'GET', credentials:'include', headers: {
-                'Content-Type': 'application/json'
-            }}).then
-        (res=>{
-                if (res.status !== 200) throw new Error("cannot fetch contacts")
-                return res.json()
-            }
+        if (props.edit === true){
+            console.log("coool")
+            fetch(getAreadyInvitedURL,{
+                method:"GET",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json",
+                    'Access-Control-Allow-Credentials': 'true'
+                }
+            }).then((res)=>{
+                if(res.status !== 200){
+                    console.log("error on getting participants")
+                    throw new Error("error on getting participants")
 
-        ).then(data => {
-            setList(data)
-            setLoading(false)
-            console.log(JSON.stringify(data))
-            return data
-        }).catch(err => console.log(err))
+                }
+                return res.json()
+            }).then(result=>{
+                console.log(JSON.stringify(result))
+                let i;
+                let alreadyIn = []
+                for (i = 0; i < result.length; i++){
+                    console.log(result[i]["contactid"])
+                    alreadyIn.push(result[i]["contactid"])
+                }
+                console.log(alreadyIn)
+
+                fetch(getDashURL, {method:'GET', credentials:'include', headers: {
+                        'Content-Type': 'application/json'
+                    }}).then
+                (res=>{
+                        if (res.status !== 200) throw new Error("cannot fetch contacts")
+                        return res.json()
+                    }
+
+                ).then(data => {
+                    let filteredData = []
+                    for (i = 0; i < data.length; i++){
+                        if (alreadyIn.indexOf(data[i]["contactid"]) < 0){
+                            filteredData.push(data[i])
+                        }
+                    }
+                    setList(filteredData)
+                    setLoading(false)
+                    return data
+                }).catch(err => console.log(err))
+            }).catch(error => console.log('error', error))
+        }
+        else {
+            fetch(getDashURL, {
+                method: 'GET', credentials: 'include', headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then
+            (res => {
+                    if (res.status !== 200) throw new Error("cannot fetch contacts")
+                    return res.json()
+                }
+            ).then(data => {
+                setList(data)
+                setLoading(false)
+                console.log(JSON.stringify(data))
+                return data
+            }).catch(err => console.log(err))
+        }
     }
 
     function handleInvite(){
@@ -124,6 +175,17 @@ function InviteContact(){
             )
         }
         if (list.length === 0){
+            if (props.edit){
+                return (
+                    <div>
+                        <h3>Every available contact has already been added.</h3>
+                        <br/>
+                        <br/>
+                        <Link to={"/dashboard"}><Button>
+                            Go Back
+                        </Button></Link>
+                    </div>)
+            }
             return (
                 <div>
                     <h3> You cannot invite Contacts if you don't have any, Create one first</h3>
@@ -176,6 +238,13 @@ function InviteContact(){
         console.log(filterCompany)
     }
 
+    function showEditHint(){
+        if(props.edit === true){
+            return(<h3>Only not invited people listed here</h3>)
+        }
+        return(<></>)
+    }
+
     if (inviteSuccess){
         return <Redirect to={"/dashboard"}/>
     }
@@ -187,6 +256,8 @@ function InviteContact(){
             <div style = {{marginLeft: "0.5rem"}}>
                 <br/>
                 <h1>Invite Contacts</h1>
+                <br/>
+                {showEditHint()}
                 <br/>
                 <Link to={"/dashboard"}><Button variant={"warning"} size={"sm"}>Proceed with no one invited</Button></Link>
 

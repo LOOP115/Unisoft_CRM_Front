@@ -30,7 +30,7 @@ function InviteItem(props){
 
     function showBadge(){
         if(person["accept"] === "Not a user"){
-            return <Badge bg={"primary"}>Not a User</Badge>
+            return <Badge bg={"warning"}>Not a User</Badge>
         } else if (person["accept"] === true){
             return <Badge bg={"success"}>√</Badge>
         } else{

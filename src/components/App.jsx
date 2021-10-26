@@ -99,6 +99,10 @@ function App() {
                             <InviteMail/>
                         </Route>
 
+                        <Route exact path={"/activity/editInvite"}>
+                            <InviteContact edit={true}/>
+                        </Route>
+
                     </Switch>
                 </EndPointContext.Provider>
             </BrowserRouter>
