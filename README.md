@@ -14,3 +14,13 @@ https://unisoft-back.herokuapp.com <br/><br/>
 ## Start react
 * Run ```npm install```
 * Run ```npm start```
+
+## Deploy react app on Heroku
+* Create Heroku account
+* Make sure there is a package.json file recorded all packages under your directory
+* Add a build pack under heroku dashboard - settings  https://github.com/mars/create-react-app-buildpack
+* Create a new app on heroku by clicking new on heroku dashboard
+* Decide a app name and chose which server you want to use
+* Connect heroku to github and ask authentication on github
+* Enable automatic deploy below and wait for CI to pass
+* Click on Deploy branch
