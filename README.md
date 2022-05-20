@@ -12,8 +12,8 @@ https://unisoft-back.herokuapp.com <br/><br/>
 * Activities: https://documenter.getpostman.com/view/9959702/UV5Rkf8K <br/><br/>
 
 ## Start react
-* Run ```npm install```
-* Run ```npm start```
+* ```npm install```
+* ```npm start```
 
 ## Deploy react app on Heroku
 * Create Heroku account
